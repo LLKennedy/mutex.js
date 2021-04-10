@@ -1,6 +1,6 @@
 {
-  "name": "@llkennedy/mutex",
-  "version": "1.0.1",
+  "name": "@llkennedy/mutex.js",
+  "version": "1.0.2",
   "description": "Javascript mutex",
   "main": "lib/index.js",
   "scripts": {
