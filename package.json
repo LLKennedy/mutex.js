@@ -1,0 +1,38 @@
+{
+  "name": "@llkennedy/mutex",
+  "version": "1.0.0",
+  "description": "Javascript mutex",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf ./lib && tsc",
+    "test": "mocha -r ts-node/register src/**/*.spec.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LLKennedy/mutex.js.git"
+  },
+  "keywords": [
+    "mutex",
+    "javascript",
+    "typescript",
+    "js",
+    "ts"
+  ],
+  "author": "Luke Kennedy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LLKennedy/mutex.js/issues"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "homepage": "https://github.com/LLKennedy/mutex.js#readme",
+  "devDependencies": {
+    "@llkennedy/sleep.js": "^1.0.1",
+    "rimraf": "^3.0.2",
+    "seedrandom": "^3.0.5",
+    "typescript": "^4.2.4"
+  }
+}
