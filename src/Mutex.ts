@@ -16,13 +16,16 @@ export class Mutex implements IMutex {
 	}
 	public async RunAsync<T>(codeToRun: SafeActionAsync<T>): Promise<T> {
 		return await new Promise<T>((resolve, reject) => {
-			this.current = this.current.finally(async () => {
+			this.current = this.current.then(async () => {
 				try {
 					let t = await codeToRun();
 					resolve(t);
 				} catch (err) {
 					reject(err);
 				}
+			}).catch(() => {
+				// This is impossible, the code above is the only thing that can be in the promise we're waiting on.
+				throw new Error("mutex in impossible state");
 			})
 		})
 	}
